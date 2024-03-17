@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "new-duck"
+version = "0.1.0"
+description = ""
+authors = ["Thomás Freire <thomas.fsr@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+taskipy = "^1.12.2"
+isort = "^5.13.2"
+black = "^24.3.0"
+pytest = "^8.1.1"
+mkdocs = "^1.5.3"
+python-dotenv = "^1.0.1"
+duckdb = "^0.10.0"
+pandas = "^2.2.1"
+streamlit = "^1.32.2"
+pandera = "^0.18.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+run = "poetry run python app/main.py"
+test = "poetry run pytest -v"
+format = "isort . & blue ."
+kill = "kill -9 $(lsof -t -i :8000)"
