@@ -17,6 +17,7 @@ duckdb = "^0.10.0"
 pandas = "^2.2.1"
 streamlit = "^1.32.2"
 pandera = "^0.18.3"
+google-api-python-client = "^2.122.0"
 
 
 [build-system]
