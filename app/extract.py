@@ -10,10 +10,12 @@ import duckdb
 load_dotenv()
 
 def create_data_dir():
+    "Creates a data folder to keep the parquet tables from Google Drive"
     os.makedirs("data", exist_ok=True)
 
 
 def download_from_gdrive():
+    "Downloads from the google drive folder the parquet files"
     data_folder = "data"
     folder_id = os.environ.get("folder_id")
     credentials = service_account.Credentials.from_service_account_file(
@@ -36,8 +38,3 @@ def download_from_gdrive():
         downloader = io.BytesIO(request.execute())
         with open(os.path.join(data_folder, file_name), "wb") as f:
             f.write(downloader.read())
-
-
-data_folder = "data"
-table = duckdb.read_parquet(f"{data_folder}/*.parquet").fetchdf()
-print(table)
