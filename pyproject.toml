@@ -18,6 +18,8 @@ pandas = "^2.2.1"
 streamlit = "^1.32.2"
 pandera = "^0.18.3"
 google-api-python-client = "^2.122.0"
+mkdocs-mermaid2-plugin = "^1.1.1"
+mkdocstrings = {extras = ["python"], version = "^0.24.1"}
 
 
 [build-system]
@@ -27,5 +29,5 @@ build-backend = "poetry.core.masonry.api"
 [tool.taskipy.tasks]
 run = "poetry run python app/main.py"
 test = "poetry run pytest -v"
-format = "isort . & blue ."
+format = "isort . & black ."
 kill = "kill -9 $(lsof -t -i :8000)"
