@@ -19,16 +19,19 @@ def validation(data_folder:str='data'):
             try:
                 schema.validate(df)
                 passed.append(filepath)
-                st.write(f"File {filename} is okay!")
+                st.write("File {filename} is okay!")
                 log.register_files(con, file)
             except Exception as e:
-                st.write(f"File {filename} has a problem")
+                st.write(f"File has a problem.")
                 continue
         else:
-                st.write(f"File {filename} is already loaded in the dataframe")
-                continue
-
-    return passed
+            st.write("File is already loaded in the dataframe.")
+            continue
+    con.close()
+    if passed:
+        return passed
+    else:
+        return None
 
 def concating(passed:list):
     df = duckdb.sql(f"SELECT product_name, transaction_time, price, store FROM read_parquet({passed})")

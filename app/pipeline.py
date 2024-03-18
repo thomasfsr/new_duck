@@ -1,5 +1,6 @@
 import extract, transform
 import os
+import streamlit as st
 
 def pipeline(output_dir:str='database',
              table_name:str='sales_table.parquet'
@@ -8,5 +9,9 @@ def pipeline(output_dir:str='database',
     extract.create_data_dir()
     extract.download_from_gdrive()
     passed = transform.validation('data')
-    df = transform.concating(passed)
-    df.to_parquet(os.path.join(output_dir,table_name))
+    if passed is not None:
+        df = transform.concating(passed)
+        df.to_parquet(os.path.join(output_dir,table_name))
+    else:
+        st.write("There is no file to update.")
+        pass
