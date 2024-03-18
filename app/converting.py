@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-path = os.environ.get("path_csvs")
+path = os.getenv("path_csvs")
 
 os.makedirs("data", exist_ok=True)
 for file in os.listdir(path):
