@@ -53,10 +53,10 @@ def download_from_gdrive(data_folder:str='data'):
                 with open(os.path.join(data_folder, filename), "wb") as f:
                     f.write(downloader.read())
                     filename_without_type = filename.split('.')[0]
-                    st.write(f'File {filename_without_type} downloaded.')
+                    st.write(f'File **{filename_without_type}** downloaded.')
             else:
-                print(f"File type {type} not supported.")
-                st.write(f"File type {type} not supported.")
+                print(f"File type **{type}** not supported.")
+                st.write(f"File type **{type}** not supported.")
         else:
-            st.write(f'File {filename} already is in the data directory.')
+            st.write(f"File **{filename}** is already loaded in the dataframe.")
     con.close()
