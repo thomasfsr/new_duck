@@ -6,3 +6,10 @@ plugins:
   - search
   - mermaid2
   - mkdocstrings
+
+nav:
+  - New Duck Docs: index.md
+  - tutorials.md
+  - How-To Guides: how-to-guides.md
+  - reference.md
+  - explanation.md
