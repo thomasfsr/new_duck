@@ -4,6 +4,7 @@ import pandas as pd
 from pandera import infer_schema
 
 def infer(df:pd.DataFrame, directory_path:str= 'infered_schema'):
+    'Infer the schema of the first file downloaded, in this case I already know that this file has now issues.'
     os.makedirs(directory_path, exist_ok=True)
     schema = infer_schema(df)
     file_path = os.path.join(directory_path, "schema_inferred.py")
