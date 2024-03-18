@@ -22,7 +22,7 @@ def validation(data_folder:str='data'):
                 st.write("File {filename} is okay!")
                 log.register_files(con, file)
             except Exception as e:
-                st.write(f"File has a problem.")
+                st.write(f"File {file} has a problem.")
                 continue
         else:
             st.write("File is already loaded in the dataframe.")
