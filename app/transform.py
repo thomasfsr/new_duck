@@ -8,6 +8,7 @@ import log
 
 
 def validation(data_folder: str = "data"):
+    """Validation of the data with pandera"""
     passed = []
     con = log.connect_db()
     log.table_init(con)
@@ -38,6 +39,7 @@ def validation(data_folder: str = "data"):
 
 
 def concating(passed: list):
+    """ Concat all files that passed the validation"""
     df = duckdb.sql(
         f"SELECT product_name, transaction_time, price, store FROM read_parquet({passed})"
     )
