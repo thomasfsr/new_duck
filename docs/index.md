@@ -20,6 +20,8 @@
 *   Install poetry dependencies:  
 `poetry install`  
 
+::: app.extract_from_gdrive.create_data_dir
+
 Pipeline of the project:  
 
 ```mermaid
