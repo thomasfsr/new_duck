@@ -6,7 +6,7 @@ from googleapiclient.discovery import build
 import streamlit as st
 import duckdb
 
-from app import log
+import log
 
 import os
 
@@ -41,8 +41,9 @@ def download_from_gdrive(data_folder:str='data'):
     for file in files.get("files", []):
         file_id = file["id"]
         filename = file["name"]
+        path_plus_filename = os.path.join(data_folder, filename)
 
-        if not os.path.isfile(os.join(data_folder, filename)) \
+        if not os.path.isfile(path_plus_filename) \
             and filename not in list_of_files:
             type = filename.split('.')[-1]
             if type == 'parquet':
@@ -51,7 +52,8 @@ def download_from_gdrive(data_folder:str='data'):
                 downloader = io.BytesIO(request.execute())
                 with open(os.path.join(data_folder, filename), "wb") as f:
                     f.write(downloader.read())
-                    st.write(f'File {filename.split('.')[0]} downloaded.')
+                    filename_without_type = filename.split('.')[0]
+                    st.write(f'File {filename_without_type} downloaded.')
             else:
                 print(f"File type {type} not supported.")
                 st.write(f"File type {type} not supported.")

@@ -1,13 +1,12 @@
 import streamlit as st
-from transform import validation
+from pipeline import pipeline
 
 def main():
     st.title("Parquet File Validation")
 
     def on_button_click():
-        result = validation('data')
-        st.write("Files passed on the validation:", result)
-
+        pipeline()
+        
     if st.button("Run Transformation"):
         on_button_click()
 

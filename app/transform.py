@@ -2,7 +2,7 @@ from schema_class import schema
 import duckdb
 import os
 import streamlit as st
-from app import log
+import log
 
 def validation(data_folder:str='data'):
     passed = []

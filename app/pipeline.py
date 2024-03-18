@@ -10,6 +10,3 @@ def pipeline(output_dir:str='database',
     passed = transform.validation('data')
     df = transform.concating(passed)
     df.to_parquet(os.path.join(output_dir,table_name))
-
-if __name__ == "__main__":
-    pipeline()
