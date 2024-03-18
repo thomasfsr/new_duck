@@ -1,4 +1,4 @@
-from pandera import DataFrameSchema, Column, Check, Index
+from pandera import Check, Column, DataFrameSchema, Index
 
 schema = DataFrameSchema(
     columns={
@@ -7,31 +7,21 @@ schema = DataFrameSchema(
             nullable=False,
             unique=False,
             coerce=False,
-            required=True
+            required=True,
         ),
         "product_name": Column(
-            dtype="object",
-            nullable=False,
-            unique=False,
-            coerce=False,
-            required=True
+            dtype="object", nullable=False, unique=False, coerce=False, required=True
         ),
         "price": Column(
             dtype="float64",
-            checks=[
-                Check.greater_than(0)
-            ],
+            checks=[Check.greater_than(0)],
             nullable=False,
             unique=False,
             coerce=False,
-            required=True
+            required=True,
         ),
         "store": Column(
-            dtype="int64",
-            nullable=False,
-            unique=False,
-            coerce=False,
-            required=True
+            dtype="int64", nullable=False, unique=False, coerce=False, required=True
         ),
     },
     index=Index(
@@ -45,5 +35,5 @@ schema = DataFrameSchema(
     ordered=False,
     report_duplicates="all",
     unique_column_names=False,
-    add_missing_columns=False
+    add_missing_columns=False,
 )
