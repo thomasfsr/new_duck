@@ -2,7 +2,7 @@ import duckdb
 import os
 from datetime import datetime
 
-def conectar_banco(file_path:str='log'):
+def connect_db(file_path:str='log'):
     """Connect to a existing database"""
     os.makedirs(file_path, exist_ok=True)
     return duckdb.connect(database=f'{file_path}/files_log.db', read_only=False)
@@ -23,6 +23,6 @@ def register_files(con, filename):
         VALUES (?, ?)
     """, (filename, datetime.now()))
 
-def arquivos_processados(con):
+def processed_files(con):
     """Return the name of all processed files"""
     return set(row[0] for row in con.execute("SELECT filename FROM historical_files").fetchall())
