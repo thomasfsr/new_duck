@@ -23,7 +23,7 @@ def validation(data_folder: str = "data"):
             try:
                 schema.validate(df)
                 passed.append(filepath)
-                st.write("File {filename} is okay!")
+                st.write(f"File {filename} is okay!")
                 log.register_files(con, file)
             except Exception as e:
                 st.write(f"File **{file}** has a problem.")
