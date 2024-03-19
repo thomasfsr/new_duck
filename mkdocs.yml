@@ -1,5 +1,4 @@
-site_name: My Docs
-
+site_name: Documentation of the ETL
 theme:
   name: "material"
 plugins:
@@ -8,8 +7,8 @@ plugins:
   - mkdocstrings
 
 nav:
-  - New Duck Docs: index.md
-  - tutorials.md
-  - How-To Guides: how-to-guides.md
-  - reference.md
-  - explanation.md
+  - ETL summary: index.md
+  - Extraction: extract.md
+  - Log: log.md
+  - Transformation: transform.md
+  - Pipeline: pipeline.md
