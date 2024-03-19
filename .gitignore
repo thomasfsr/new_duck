@@ -179,3 +179,5 @@ pyrightconfig.json
 
 credentials
 data
+log
+database
