@@ -3,7 +3,7 @@ import os
 import streamlit as st
 import transform
 
-import app.extract_from_gdrive as extract_from_gdrive
+import extract_from_gdrive as extract_from_gdrive
 
 
 def pipeline(output_dir: str = "database", table_name: str = "sales_table.parquet"):
