@@ -1,6 +1,6 @@
 # Pipeline of the project:
 
-## Steps to install and run the project:    
+## Steps to install and run the project  
   
 * Install poetry in case you don't have it in your machine:  
 `pip install poetry` 
@@ -20,9 +20,7 @@
 *   Install poetry dependencies:  
 `poetry install`  
 
-::: app.extract_from_gdrive.create_data_dir
-
-Pipeline of the project:  
+## Flowchart of the Pipeline  
 
 ```mermaid
 graph TD;

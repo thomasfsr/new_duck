@@ -13,12 +13,12 @@ load_dotenv()
 
 
 def create_data_dir(data_folder: str = "data"):
-    """Creates a data folder to keep the parquet tables from Google Drive"""
+    """Creates a data folder to keep the parquet tables from Google Drive."""
     os.makedirs(data_folder, exist_ok=True)
 
 
 def download_from_gdrive(data_folder: str = "data"):
-    """Downloads from the google drive folder the parquet files"""
+    """Downloads from the google drive folder the parquet files."""
     data_folder = "data"
     folder_id = os.environ.get("folder_id")
     credentials = service_account.Credentials.from_service_account_file(
