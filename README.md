@@ -8,5 +8,6 @@
 - Iniciar o frontend com o taskipy:  
 `task front`  
 - Documentação:  
-`task build_doc`  
 `task doc_run`
+## Abra o navegador de sua preferência e entre no link:  
+http://127.0.0.1:8000/
