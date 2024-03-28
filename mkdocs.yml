@@ -1,5 +1,14 @@
-site_name: My Docs
+site_name: Documentation of the ETL
+theme:
+  name: "material"
 plugins:
   - search
   - mermaid2
   - mkdocstrings
+
+nav:
+  - ETL summary: index.md
+  - Extraction: extract.md
+  - Log: log.md
+  - Transformation: transform.md
+  - Pipeline: pipeline.md

@@ -20,6 +20,7 @@ pandera = {extras = ["io"], version = "^0.18.3"}
 google-api-python-client = "^2.122.0"
 mkdocs-mermaid2-plugin = "^1.1.1"
 mkdocstrings = {extras = ["python"], version = "^0.24.1"}
+mkdocs-material = "^9.5.14"
 
 
 [build-system]
@@ -31,3 +32,6 @@ run = "poetry run python app/main.py"
 test = "poetry run pytest -v"
 format = "isort . & black ."
 kill = "kill -9 $(lsof -t -i :8000)"
+front = "streamlit run app/frontend.py"
+build_doc = "mkdocs build"
+doc_run = "mkdocs serve"

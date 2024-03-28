@@ -1,17 +1,36 @@
-# Welcome to MkDocs
+# Pipeline of the project:
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Steps to install and run the project  
+  
+* Install poetry in case you don't have it in your machine:  
+`pip install poetry` 
 
-## Commands
+* Clone repository:  
+`git clone https://github.com/thomasfsr/new_duck.git`  
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+*   Access the project directory:  
+`cd transform_duck`  
+  
+*   Config python version 3.11.7:    
+`pyenv local 3.11.7`  
 
-## Project layout
+*   initialize virtual environment with poetry:  
+`poetry shell`  
+  
+*   Install poetry dependencies:  
+`poetry install`  
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Flowchart of the Pipeline  
+
+```mermaid
+graph TD;
+    A[Start] --> B[Create Output Directory]
+    B --> C[Create Data Directory]
+    C --> D[Download Data from Google Drive]
+    D --> E[Data Validation]
+    E -->|Passed| F[Concatenate Data]
+    F --> G[Write to Parquet File]
+    E -->|Failed| H[Write Error Message]
+    H --> I[End]
+    F --> I[End]
+```
